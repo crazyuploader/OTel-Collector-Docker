@@ -8,10 +8,14 @@ receivers:
 
 processors:
   batch:
+  transform:
+    error_mode: ignore
+    trace_statements:
+      - replace_pattern(span.attributes["client.address"], "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\\.|$)){4}", "*.*.*.*")
 
 exporters:
   otlp:
-    endpoint: otlp-collector:4317
+    endpoint: signoz-otel-collector:4317
     tls:
       insecure: true
 
@@ -28,7 +32,7 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: [batch]
+      processors: [batch,transform]
       exporters: [otlp]
     metrics:
       receivers: [otlp]

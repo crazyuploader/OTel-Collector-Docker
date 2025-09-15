@@ -6,6 +6,11 @@ services:
     restart: unless-stopped
     volumes:
       - ./config:/etc/config
+    networks:
+      - signoz-net
     ports:
       - 4319:4319
       - 4320:4320
+networks:
+  signoz-net:
+    external: true
