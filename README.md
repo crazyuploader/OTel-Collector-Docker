@@ -4,9 +4,17 @@
 
 This repository contains example(s) of running OTel Collector using Docker Compose.
 
-## Notes
+## Usage
 
-- Collector used here is OpenTelemetry Collector Contrib (also known as "otelcol-contrib"), more info [here](https://github.com/open-telemetry/opentelemetry-collector-releases/blob/main/distributions/otelcol-contrib).
+After setting configuration in [`config.yaml`](config/config.yaml), simply bring up the Docker Container by running -
+
+```bash
+docker compose up --detach
+```
+
+### Notes
+
+- Collector used here is ***OpenTelemetry Collector Contrib (also known as "otelcol-contrib")***, more info [here](https://github.com/open-telemetry/opentelemetry-collector-releases/blob/main/distributions/otelcol-contrib).
 
 - **Docker Image:** `otel/opentelemetry-collector-contrib:0.135.0`
 
@@ -14,4 +22,4 @@ This repository contains example(s) of running OTel Collector using Docker Compo
   - HTTP: `4319`
   - GRPC: `4320`
 
-- Kindly set **OTLP Endpoint** [here](https://github.com/crazyuploader/OTel-Collector-Docker/blob/main/config/config.yaml#L13) for the Exporter.
+- Kindly set **OTLP Endpoint** [here](https://github.com/crazyuploader/OTel-Collector-Docker/blob/main/config/config.yaml#L14) for the Exporter.
