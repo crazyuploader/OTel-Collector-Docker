@@ -16,7 +16,7 @@ docker compose up --detach
 
 - Collector used here is ***OpenTelemetry Collector Contrib (also known as "otelcol-contrib")***, more info [here](https://github.com/open-telemetry/opentelemetry-collector-releases/blob/main/distributions/otelcol-contrib).
 
-- **Docker Image:** `otel/opentelemetry-collector-contrib:0.135.0`
+- **Docker Image:** `otel/opentelemetry-collector-contrib:0.136.0`
 
 - **Ports Exposed:**
   - HTTP: `4319`
