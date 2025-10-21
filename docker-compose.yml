@@ -1,7 +1,7 @@
 services:
   otel-collector:
     container_name: otel-collector
-    image: otel/opentelemetry-collector-contrib:0.136.0
+    image: otel/opentelemetry-collector-contrib:0.138.0
     command: ["--config", "/etc/config/config.yaml"]
     restart: unless-stopped
     volumes:
